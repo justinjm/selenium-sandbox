@@ -4,14 +4,18 @@ from time import sleep
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+from datetime import datetime
+
+url = 'https://www.wblivesurf.com'
 
 service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
-# driver = webdriver.Chrome()
-driver.get('https://www.python.org')
+driver.get(url)
 sleep(1)
 
-driver.get_screenshot_as_file("screenshot.png")
+out_file = 'screenshot_' + str(datetime.now().strftime('%Y_%m_%d_%H_%M_%S')) + '.png'
+
+driver.get_screenshot_as_file(out_file)
 driver.quit()
 print("end...")
