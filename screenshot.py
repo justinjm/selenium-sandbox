@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from datetime import datetime
 
-url = 'https://www.wblivesurf.com'
+url = 'https://www.surfline.com/surf-report/crystal-pier/5842041f4e65fad6a7708a73?camId=60c0ffa0daa3c57c71feda47'
 
 service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
